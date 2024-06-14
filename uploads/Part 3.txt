@@ -1,0 +1,48 @@
+# Part 3: Feature Extraction Techniques
+# Bag-of-words
+# Step 2: Vocabulary Creation
+
+
+vocabulary = sorted(set(word for doc in example_string for word in doc))
+
+
+# Create a dictionary to map each word to an index
+vocab_index = {word: idx for idx, word in enumerate(vocabulary)}
+
+
+
+
+
+
+from collections import Counter
+import numpy as np
+
+corpus = [
+    gutenberg.raw('austen-emma.txt'), "Volume I"
+]
+
+# Step 1: Tokenization
+tokenized_corpus = [doc.lower().split() for doc in corpus]
+
+# Step 2: Vocabulary Creation
+vocabulary = sorted(set(word for doc in tokenized_corpus for word in doc))
+
+# Create a dictionary to map each word to an index
+vocab_index = {word: idx for idx, word in enumerate(vocabulary)}
+
+# Step 3: Vectorization
+vectors = []
+for doc in tokenized_corpus:
+    vector = np.zeros(len(vocabulary), dtype=int)
+    word_counts = Counter(doc)  # Count the frequency of each word in the document
+    for word, count in word_counts.items():
+        if word in vocab_index:
+            vector[vocab_index[word]] = count
+    vectors.append(vector)
+
+# Convert the list of vectors to a numpy array
+vectors = np.array(vectors)
+
+# Print the results
+print("Vocabulary:", vocabulary)
+print("Vectors:\n", vectors)

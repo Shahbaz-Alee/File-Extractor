@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Extractor</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.4; 
+            padding: 20px; 
+            margin: 0; 
+            overflow: hidden; /* Prevents scrollbars from appearing */
+        }
+        .container { 
+            max-width: 700px; 
+            margin: 0 auto; 
+            position: relative; 
+            z-index: 2; 
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
+            padding: 20px; 
+            border-radius: 10px; 
+        }
+        .textbox { 
+            width: 90%; 
+            height: 100px;  /* Adjusted height */
+            border: 1px solid #ccc; 
+            padding: 8px; 
+            margin-bottom: 20px; /* Increased margin for better spacing */
+            resize: vertical; 
+            font-family: 'Times New Roman', Times, serif; 
+            font-size: 14px; 
+        }
+        .button { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background-color: #4CAF50; 
+            color: white; 
+            text-align: center; 
+            text-decoration: none; 
+            font-size: 16px; 
+            margin-top: 10px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 5px; 
+        }
+        .button:hover { 
+            background-color: #45a049; 
+        }
+        .bgAnimation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            grid-template-rows: repeat(20, 1fr);
+            background: #1d1d1d;
+            filter: saturate(2);
+            overflow: hidden;
+            z-index: 1; /* Lower z-index than the container */
+        }
+        .colorBox {
+            z-index: 2;
+            filter: brightness(1.1);
+            transition: 2s ease;
+            position: relative;
+            margin: 2px;
+            background: #1d1d1d;
+        }
+        .colorBox:hover {
+            background: #00bfff;
+            transition-duration: 0s;
+        }
+        .backgroundAmim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: #00bfff;
+            filter: blur(60px);
+            animation: animBack 6s linear infinite;
+        }
+        @keyframes animBack {
+            0% { top: 0; }
+            100% { top: 100vh; }
+        }
+    </style>
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("extracted-text");
+            copyText.select();
+            document.execCommand("copy");
+        }
+    </script>
+</head>
+<body>
+    <div class="bgAnimation" id="bgAnimation">
+        <div class="backgroundAmim"></div>
+    </div>
+    <div class="container">
+        <h1>Upload your document</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data"> 
+            <input type="file" name="file">
+            <input type="submit" value="Upload" class="button">
+        </form>
+        <hr>
+        {% if text %}
+        <h2>Extracted Text</h2>
+        <textarea id="extracted-text" class="textbox" readonly>{{ text }}</textarea><br>
+        <button onclick="copyToClipboard()" class="button">Copy Text</button>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

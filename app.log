@@ -1,0 +1,29 @@
+werkzeug - WARNING -  * Debugger is active!
+werkzeug - INFO -  * Debugger PIN: 102-727-302
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 18:49:09] "GET / HTTP/1.1" 200 -
+root - INFO - File M. Nouman.pdf uploaded successfully
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 18:49:16] "POST /upload HTTP/1.1" 200 -
+werkzeug - INFO -  * Detected change in 'd:\\flask_app\\app.py', reloading
+werkzeug - WARNING -  * Debugger is active!
+werkzeug - INFO -  * Debugger PIN: 102-727-302
+root - INFO - File M. Nouman.pdf uploaded successfully
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 18:49:33] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 18:49:33] "GET /upload?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 18:49:33] "GET /upload?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 18:49:33] "GET /upload?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 18:49:33] "[36mGET /upload?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+werkzeug - INFO -  * Detected change in 'd:\\flask_app\\app.py', reloading
+werkzeug - WARNING -  * Debugger is active!
+werkzeug - INFO -  * Debugger PIN: 102-727-302
+root - INFO - File M. Nouman.pdf uploaded successfully
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 18:49:45] "POST /upload HTTP/1.1" 200 -
+werkzeug - INFO -  * Detected change in 'd:\\flask_app\\app.py', reloading
+werkzeug - WARNING -  * Debugger is active!
+werkzeug - INFO -  * Debugger PIN: 102-727-302
+werkzeug - INFO -  * Detected change in 'd:\\flask_app\\app.py', reloading
+werkzeug - WARNING -  * Debugger is active!
+werkzeug - INFO -  * Debugger PIN: 102-727-302
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 22:59:23] "GET / HTTP/1.1" 200 -
+root - INFO - File Raveeha Mohsin.pdf uploaded successfully
+werkzeug - INFO - 127.0.0.1 - - [14/Jun/2024 22:59:33] "POST /upload HTTP/1.1" 200 -
+werkzeug - INFO -  * Detected change in 'd:\\flask_app\\app.py', reloading
